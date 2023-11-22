@@ -7,6 +7,7 @@ program
   .argument('<url>')
   .option('-o, --output [dir]', 'output dir', '/home/user/current-dir')
   .action((url, options) => {
+    console.log(url, options);
   });
 
 program.parse();
