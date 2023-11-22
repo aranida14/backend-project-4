@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { program } from 'commander';
+import pageLoader from '../src/index.js';
 
 program
   .description('Page loader utility')
@@ -7,7 +8,9 @@ program
   .argument('<url>')
   .option('-o, --output [dir]', 'output dir', '/home/user/current-dir')
   .action((url, options) => {
-    console.log(url, options);
+    pageLoader(url, options.output).then((downloadedFilepath) => {
+      console.log(downloadedFilepath);
+    });
   });
 
 program.parse();
