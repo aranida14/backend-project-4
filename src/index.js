@@ -1,5 +1,5 @@
-const pageLoader = () => (
-  Promise.resolve('pageLoader says Hi')
+const loadPage = (url, outputDir = process.cwd()) => (
+  Promise.resolve(`loadPage (${url}, ${outputDir}) says Hi`)
 );
 
-export default pageLoader;
+export default loadPage;
